@@ -7,7 +7,7 @@ LOCAL_FORCE_STATIC_EXECUTABLE := true
 LOCAL_STATIC_LIBRARIES := libc libcutils libselinux libsepol
 LOCAL_SRC_FILES := sepolicy-inject.c
 LOCAL_C_INCLUDES := external/libselinux/include external/selinux/libsepol/include
-LOCAL_CFLAGS += -std=gnu11
+LOCAL_CFLAGS += -std=gnu11 -Os
 include $(BUILD_EXECUTABLE)
 
 include $(CLEAR_VARS)
@@ -17,7 +17,7 @@ LOCAL_FORCE_STATIC_EXECUTABLE := true
 LOCAL_STATIC_LIBRARIES := libselinux libsepol
 LOCAL_SRC_FILES := sepolicy-inject.c
 LOCAL_C_INCLUDES := external/libselinux/include external/selinux/libsepol/include
-LOCAL_CFLAGS += -std=gnu11
+LOCAL_CFLAGS += -std=gnu11 -Os
 include $(BUILD_HOST_EXECUTABLE)
 
 include $(CLEAR_VARS)
@@ -27,7 +27,7 @@ LOCAL_FORCE_STATIC_EXECUTABLE := true
 LOCAL_STATIC_LIBRARIES := libc libcutils libselinux libsepol-N
 LOCAL_SRC_FILES := sepolicy-inject.c
 LOCAL_C_INCLUDES := external/libselinux/include $(LOCAL_PATH)/libsepol-N/include
-LOCAL_CFLAGS += -std=gnu11
+LOCAL_CFLAGS += -std=gnu11 -Os
 include $(BUILD_EXECUTABLE)
 
 include $(CLEAR_VARS)
@@ -37,7 +37,7 @@ LOCAL_FORCE_STATIC_EXECUTABLE := true
 LOCAL_STATIC_LIBRARIES := libselinux libsepol-N
 LOCAL_SRC_FILES := sepolicy-inject.c
 LOCAL_C_INCLUDES := external/libselinux/include $(LOCAL_PATH)/libsepol-N/include
-LOCAL_CFLAGS += -std=gnu11
+LOCAL_CFLAGS += -std=gnu11 -Os
 include $(BUILD_HOST_EXECUTABLE)
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
